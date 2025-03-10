@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://vv5eghryo5mh"]
+
+[ext_resource type="Script" path="res://Levels/Menu.gd" id="1_xhqjn"]
+[ext_resource type="TileSet" uid="uid://bions877yitko" path="res://Prefabs/Tileset.tres" id="2_mc1va"]
+[ext_resource type="PackedScene" uid="uid://b32jnrthosr7d" path="res://Prefabs/player.tscn" id="3_7fcw6"]
+
+[node name="Level 2" type="Node2D"]
+script = ExtResource("1_xhqjn")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 103.0
+offset_bottom = 151.0
+text = "Play again"
+
+[node name="Player" parent="." instance=ExtResource("3_7fcw6")]
+position = Vector2(105, 268)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_mc1va")
+format = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
